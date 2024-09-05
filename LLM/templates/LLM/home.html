@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My AI</title>
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="{% static 'LLM/css/style.css' %}">
+</head>
+<body>
+  <h1>Ask your Question - My AI</h1>
+  <form method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    {{form.my_message}}
+    <button type="submit">Ask</button>
+  </form>
+  <pre>{{ ai_recipe }}</pre>
+</body>
+</html>
